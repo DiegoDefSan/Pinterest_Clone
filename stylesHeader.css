@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+#nav-bar {
+  displaY: flex;
+  justify-content: center;
+  min-height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+}
+#nav-bar img {
+  width: 25px;
+}
+#ul-nav-bar {
+  display: flex;
+  list-style: none;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#pinterest-logo {
+  border-radius: 100%;
+  border: none;
+  padding: 0.6em 0.6em;
+}
+#pinterest-logo img {
+  transform: translateY(5px);
+}
+#ul-nav-bar .left-bar {
+  text-decoration: none;
+  padding: 0.9em 1em;
+  border-radius: 100px;
+  border: none;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #000;
+}
+#ul-nav-bar a{
+  transition: all .2s;
+}
+#selected {
+  color: #fff !important;
+  background-color: #000 !important;
+  display: flex;
+}
+#selected p {
+  font-size: 1em;
+}
+#down-arrow {
+  display: none;
+  height: 6px;
+  width: 6px;
+  transform: translate(10px, 2px) rotate(45deg);
+  border-bottom: #000 2.5px solid;
+  border-right: #000 2.5px solid;
+}
+#ul-nav-bar a:hover {
+  color: #000;
+  background-color: #ddd;
+}
+#search-element {
+  margin: 0 12px;
+  display: flex;
+  width: 65vw;
+}
+#search-bar {
+  background-color: #efefef;
+  border-radius: 100px;
+  padding: 0.8em 1.2em;
+  padding-left: 30px;
+  border: none;
+  font-size: 0.8em;
+  transition: all .2s;
+  width: 100%;
+}
+#search-bar:hover {
+  background-color: #ddd;
+}
+#search-element img{
+  width: 20px;
+  position: absolute;
+  transform: translate(10px, 12px);
+}
+.right-bar {
+  padding: .6em;
+  border-radius: 100%;
+}
+.right-bar img {
+  transform: translateY(5px);
+}
+.right-bar div{
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  transform: translate(16px, 5px) rotate(45deg);
+  border-bottom: #000 2px solid;
+  border-right: #000 2px solid;
+}
+#last-match {
+  padding: .5em 1.05em;
+}
+@media (max-width: 850px) {
+  #down-arrow {
+    display:block;
+  }
+  #today {
+    display: none;
+  }
+  #selected {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  #selected:hover {
+    background-color: #ddd !important;
+  }
+}

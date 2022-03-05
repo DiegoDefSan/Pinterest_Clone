@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest Clone</title>
+  <link rel="stylesheet" href="stylesHeader.css">
+  <link rel="stylesheet" href="stylesMain.css">
+  <link rel="stylesheet" href="stylesFooter.css">
+</head>
+<body>
+  <header>
+    <nav id="nav-bar">
+      <ul id="ul-nav-bar">
+        <li><a href="#" id="pinterest-logo"><img src="/Pictures/25698.png"></a></li>
+        <li><a href="#" class="left-bar" id="selected"><p>Inicio</p><div id="down-arrow"></div></a></li>
+        <li><a href="#" class="left-bar" id="today">Hoy</a></li>
+        <li id="search-element">
+          <img src="/Pictures/5402443_search_find_magnifier_magnifying_magnifying glass_icon.png">
+          <input type="text" placeholder="Buscar" id="search-bar">
+        </li>
+        <li><a href="#" class="right-bar"><img src="/Pictures/1564519_bell_new_note_notifications_icon.png"></a></li>
+        <li><a href="#" class="right-bar"><img src="/Pictures/186393_bubble_chat_chat bubble_message_text_icon.png"></a></li>
+        <li><a href="#" class="right-bar"><img src="/Pictures/5402435_account_profile_user_avatar_man_icon.png"></a></li>
+        <li><a href="#" class="right-bar" id="last-match"><div></div></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="main-section" id="main">
+    <!--
+    <div class="container">
+      <div class="sub-container">
+        <div class="header-sub">
+          <a class="left" href="#">
+            <span class="profile">Perfil</span>
+            <span class="down-arrow"></span>
+          </a>
+          <input type="Button" value="Guardar" class="right">
+        </div>
+        
+        <div class="footer-sub">
+          <a class="upload"><img src="/Pictures/3994414_arrow_interface_send_upload_uploading_icon.png"></a>
+          <a class="options"><img src="/Pictures/4280472_more_outlined_options_rollup_icon.png"></a>
+        </div>
+        
+      </div>
+      <img src="/Main_pictures/flor1.jpg">
+    </div>
+  -->
+  </main>
+  
+  <footer id="footer-section">
+    <div class="footer-div">
+      <div class="opt" id="plus" onclick="displayOptionPlus()"><img src="/Pictures/211877_plus_round_icon.png"></div>
+      <div class="opt" id="help" onclick="displayOptionQuestion()"><img src="/Pictures/7099601_faq_help_support_information_info_icon.png"></div>
+    </div>
+    <div class="opt-section" id="plus-option">
+      <a href="#"><img src="/Pictures/25698.png" class="opt-image"><p> Hazte con nuestro botón
+        de navegación para guardar ideas incluso más rápido</p></a>
+      <a href="#"><img src="/Pictures/211877_plus_round_icon.png" class="opt-image"><p> Crea un pin</p></a>
+    </div>
+    <div class="opt-section" id="question-option">
+      <a href="#"><p> Visita el centro de asistencia</p><img src="/Pictures/1031531_arrow_arrow down_bottom_diagonal_diagonalarrowdownleft_icon.png"></a>
+      <a href="#"><p> Crear widget</p><img src="/Pictures/1031531_arrow_arrow down_bottom_diagonal_diagonalarrowdownleft_icon.png"></a>
+      <hr>
+      <ul>
+        <li><a href="#" class="quest-a-tag">Info</a></li>
+        <li><a href="#" class="quest-a-tag">Blog</a></li>
+        <li><a href="#" class="quest-a-tag">Empresas</a></li>
+        <li><a href="#" class="quest-a-tag">Empleos</a></li>
+        <li><a href="#" class="quest-a-tag">Desarrolladores</a></li>
+        <li><a href="#" class="quest-a-tag">Eliminaciones</a></li>
+        <li><a href="#" class="quest-a-tag">Privacidad</a></li>
+        <li><a href="#" class="quest-a-tag">Anuncios personalizados</a></li>
+        <li><a href="#" class="quest-a-tag">Condiciones</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="app.js"></script>
+<script>
+  var elem = document.querySelector('.main-section');
+  imagesLoaded(elem, () => {
+    var msnry = new Masonry( elem, {
+    itemSelector: '.container',
+    columnWidth: 210,
+    gutter:20,
+    isFitWidth: true
+  });
+  })
+
+  const plusOptionID = document.getElementById('plus-option');
+  const questionOptionID = document.getElementById('question-option');
+
+  function displayOptionPlus () {
+    questionOptionID.style.display='none';
+    if (plusOptionID.style.display=='none') {
+      plusOptionID.style.display='block';
+    }
+    else {
+      plusOptionID.style.display='none';
+    } 
+  }
+  function displayOptionQuestion () {
+    plusOptionID.style.display='none';
+    if (questionOptionID.style.display=='none') {
+      questionOptionID.style.display='block';
+    }
+    else {
+      questionOptionID.style.display='none';
+    } 
+  }
+</script>
+</html>
